@@ -13,8 +13,7 @@ import requests
 
 
 def task_one():
-    """Enter GitHub username,
-        get his repo's list to file './repos.json'.
+    """Сохраняет в файл список репозиториев пользователя.
     """
 
     gituser = ""
