@@ -1,0 +1,104 @@
+2021-09-19 16:32:51 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: hhru)
+2021-09-19 16:32:51 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.10 (default, Jun  4 2021, 15:09:15) - [GCC 7.5.0], pyOpenSSL 20.0.1 (OpenSSL 1.1.1l  24 Aug 2021), cryptography 3.4.7, Platform Linux-5.11.0-34-generic-x86_64-with-glibc2.17
+2021-09-19 16:32:51 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2021-09-19 16:32:51 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'hhru',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_IP': 8,
+ 'LOG_FILE': './spider.log',
+ 'NEWSPIDER_MODULE': 'hhru.spiders',
+ 'SPIDER_LOADER_WARN_ONLY': True,
+ 'SPIDER_MODULES': ['hhru.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
+2021-09-19 16:32:51 [scrapy.extensions.telnet] INFO: Telnet Password: 7f6925b5888cd3bc
+2021-09-19 16:32:51 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2021-09-19 16:32:51 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-09-19 16:32:51 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-09-19 16:32:51 [scrapy.middleware] INFO: Enabled item pipelines:
+['hhru.pipelines.HhruPipeline', 'hhru.pipelines.SjruPipeline']
+2021-09-19 16:32:51 [scrapy.core.engine] INFO: Spider opened
+2021-09-19 16:32:51 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-09-19 16:32:51 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2021-09-19 16:32:51 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-09-19 16:32:51 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'elapsed_time_seconds': 0.002584,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 9, 19, 13, 32, 51, 695297),
+ 'log_count/INFO': 10,
+ 'memusage/max': 64352256,
+ 'memusage/startup': 64352256,
+ 'start_time': datetime.datetime(2021, 9, 19, 13, 32, 51, 692713)}
+2021-09-19 16:32:51 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-09-19 16:35:38 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: hhru)
+2021-09-19 16:35:38 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.10 (default, Jun  4 2021, 15:09:15) - [GCC 7.5.0], pyOpenSSL 20.0.1 (OpenSSL 1.1.1l  24 Aug 2021), cryptography 3.4.7, Platform Linux-5.11.0-34-generic-x86_64-with-glibc2.17
+2021-09-19 16:35:38 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2021-09-19 16:35:38 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'hhru',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_IP': 8,
+ 'LOG_FILE': './spider.log',
+ 'NEWSPIDER_MODULE': 'hhru.spiders',
+ 'SPIDER_LOADER_WARN_ONLY': True,
+ 'SPIDER_MODULES': ['hhru.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
+2021-09-19 16:35:38 [scrapy.extensions.telnet] INFO: Telnet Password: 962b3c2ceb43e2ff
+2021-09-19 16:35:38 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2021-09-19 16:35:38 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-09-19 16:35:38 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-09-19 16:35:38 [scrapy.middleware] INFO: Enabled item pipelines:
+['hhru.pipelines.HhruPipeline', 'hhru.pipelines.SjruPipeline']
+2021-09-19 16:35:38 [scrapy.core.engine] INFO: Spider opened
+2021-09-19 16:35:38 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-09-19 16:35:38 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2021-09-19 16:35:38 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-09-19 16:35:38 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'elapsed_time_seconds': 0.002562,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 9, 19, 13, 35, 38, 755739),
+ 'log_count/INFO': 10,
+ 'memusage/max': 64262144,
+ 'memusage/startup': 64262144,
+ 'start_time': datetime.datetime(2021, 9, 19, 13, 35, 38, 753177)}
+2021-09-19 16:35:38 [scrapy.core.engine] INFO: Spider closed (finished)
