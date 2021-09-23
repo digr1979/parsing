@@ -1,0 +1,83 @@
+import scrapy
+from scrapy.loader import ItemLoader
+from scrapy.http import HtmlResponse
+from lm.items import LmItem
+
+
+# Собираем с сайта leroymerlin.ru 
+# следующие данные из подкатегории "Дверные звонки и домофоны":
+# 	название;
+# 	все фото;
+# 	параметры товара в объявлении.
+
+
+class LmSpider(scrapy.Spider):
+    name = 'lm'
+    allowed_domains = ['leroymerlin.ru']
+    start_urls = ["https://leroymerlin.ru/catalogue/dvernye-zvonki-i-domofony/"]
+
+    def parse(self, response):
+        """"""
+        
+        next_page = "https://leroymerlin.ru" + \
+            response.xpath('//a [@class="bex6mjh_plp s15wh9uj_plp l7pdtbg_plp r1yi03lb_plp sj1tk7s_plp"][@href]/@href')[0].extract()
+        yield response.follow(next_page, callback=self.parse)
+        
+        goods = ["https://www.leroymerlin.ru" + href for href in response.xpath('//div [@class="phytpj4_plp largeCard"]/a[@href]/@href').extract()]
+        
+        for link in goods:
+            yield response.follow(link, callback=self.goods_parse)
+        
+                
+    def goods_parse(self, response):
+        """"""
+        
+        title = ""
+        features = {}
+        link = ""
+        source = ""
+        price = ""
+        currency = ""
+        unit = ""
+
+        i = ItemLoader(item=LmItem(), response=response)
+
+        # Добавляем ссылку на товар
+        i.add_value('link', response.request.url)
+        
+        # Извлекаем и добавляем наименование товара
+        title = response.xpath('//h1 [@slot="title"] [@itemprop="name"] [@class="header-2"]/text()').extract_first()
+        i.add_value('title', title)
+        
+        # Извлекаем цену
+        i.add_xpath('price', '//uc-pdp-price-view/span [@slot="price"]/text()')
+        # Извлекаем валюту
+        i.add_xpath('currency', '//uc-pdp-price-view/span [@slot="currency"]/text()')
+        # Извлекаем единицы
+        i.add_xpath('unit', '//uc-pdp-price-view/span [@slot="unit"]/text()')
+        
+        # Извлекаем и добавляем характеристики товара
+        def_node_lst = response.xpath('//div [@class="def-list__group"]')
+        for def_node in def_node_lst:
+            feature_name = def_node.xpath('./dt [@class="def-list__term"]/text()').extract_first().strip()
+            feature = [f.strip() for f in def_node.xpath('./dd [@class="def-list__definition"]/text()').extract()]
+            # print("# -- FEATURE_NAME IS: ", feature_name)
+            # print("# -- FEATURE IS: ", feature)
+            features[feature_name] = feature
+        
+        # Извлекаем картинки по товару
+        response.xpath('//uc-pdp-media-carousel [@slot="media-content"]/img [@slot="thumbs"]/@src').extract()
+        
+        i.add_value('features', features)
+        
+        return i.load_item()         
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
